@@ -4,7 +4,7 @@ import Input from './components/UI/Input';
 
 function App() {
   return (
-    <main>
+    <main className='flex flex-col gap-3'>
       <Input id='name' label='Your name' type='text' />
       <Input id='age' label='Your age' type='number' />
 
@@ -14,7 +14,11 @@ function App() {
       <p>
         <Button href='something.com'>button</Button>
       </p>
-      <Container as='button' />
+      <p>
+        <Container as='button' >
+          click me
+        </Container>
+      </p>
     </main>
   );
 }
