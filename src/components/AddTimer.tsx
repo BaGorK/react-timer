@@ -9,10 +9,11 @@ function AddTimer() {
   const customForm = useRef<FormHandle>(null);
 
   const handleSave = (data: unknown) => {
-    const {name, duration} = data as { name: string; duration: string };
+    const { name, duration } = data as { name: string; duration: string };
 
+    if (!name || !duration) return;
 
-    addTimer({name, duration: Number(duration)});
+    addTimer({ name, duration: Number(duration) });
 
     customForm.current?.clear();
   };
