@@ -4,9 +4,15 @@ import Input from './components/UI/Input';
 import Form from './components/UI/Form';
 
 function App() {
+  const handleSave = (data: unknown) => {
+    const extractedData = data as { name: string; age: string };
+
+    console.log(extractedData);
+  };
+
   return (
     <main className='flex flex-col gap-3'>
-      <Form>
+      <Form onSave={handleSave}>
         <Input id='name' label='Your name' type='text' />
         <Input id='age' label='Your age' type='number' />
 
