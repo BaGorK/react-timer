@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, type ReactNode } from 'react';
+import { createContext, useContext, useReducer, type ReactNode } from 'react';
 
 type Timer = {
   name: string;
@@ -9,6 +9,11 @@ type Timer = {
 type TimersState = {
   isRunning: boolean;
   timers: Timer[];
+};
+
+const initialState: TimersState = {
+  isRunning: true,
+  timers: [],
 };
 
 type TimersContextValue = TimersState & {
@@ -23,17 +28,9 @@ type TimersContextProviderProps = {
 
 const TimersContext = createContext<TimersContextValue | null>(null);
 
-export const useTimersContext = () => {
-  const ctx = useContext(TimersContext);
-
-  if (!ctx) {
-    throw new Error('Timers context used outside of the scope');
-  }
-
-  return ctx;
-};
-
 function TimersContextProvider({ children }: TimersContextProviderProps) {
+  useReducer(reducer, initialState);
+
   const ctx: TimersContextValue = {
     timers: [],
     isRunning: false,
@@ -48,5 +45,15 @@ function TimersContextProvider({ children }: TimersContextProviderProps) {
     <TimersContext.Provider value={ctx}>{children}</TimersContext.Provider>
   );
 }
+
+export const useTimersContext = () => {
+  const ctx = useContext(TimersContext);
+
+  if (!ctx) {
+    throw new Error('Timers context used outside of the scope');
+  }
+
+  return ctx;
+};
 
 export default TimersContextProvider;
