@@ -1,8 +1,11 @@
+import Input from './components/UI/Input';
+
 function App() {
   return (
-    <div className='h-screen flex justify-center items-center'>
-      <h1 className='text-4xl text-center text-red-500'>App</h1>
-    </div>
+    <main>
+      <Input id='name' label='Your name' />
+      <Input id='age' label='Your age' />
+    </main>
   );
 }
 
