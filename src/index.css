@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Handjet:wght@400;700&display=swap');
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 * {
   box-sizing: border-box;
@@ -42,7 +42,7 @@ ul {
   font-family: 'Handjet', sans-serif;
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 10rem));
+  grid-template-columns: 1fr 1fr;
 }
 
 ul li {

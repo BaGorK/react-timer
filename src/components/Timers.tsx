@@ -1,9 +1,18 @@
+import { useTimersContext } from '../context/TimersContext';
+import Timer from './Timer';
+
 function Timers() {
+  const { timers } = useTimersContext();
+
   return (
-    <div>
-      Timers
-    </div>
-  )
+    <ul>
+      {timers.map((timer, i) => (
+        <li key={i}>
+          <Timer {...timer} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default Timers
+export default Timers;

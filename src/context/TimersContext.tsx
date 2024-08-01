@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useReducer, type ReactNode } from 'react';
 
-type Timer = {
+export type Timer = {
   name: string;
   duration: number;
 };
