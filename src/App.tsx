@@ -1,4 +1,5 @@
 import Button from './components/UI/Button';
+import Container from './components/UI/Container';
 import Input from './components/UI/Input';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <p>
         <Button href='something.com'>button</Button>
       </p>
+      <Container as='button' />
     </main>
   );
 }
