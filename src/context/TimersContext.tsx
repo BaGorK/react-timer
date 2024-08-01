@@ -67,7 +67,7 @@ const timersReducer = (state: TimersState, action: Action): TimersState => {
 };
 
 const initialState: TimersState = {
-  isRunning: false,
+  isRunning: true,
   timers: [],
 };
 
