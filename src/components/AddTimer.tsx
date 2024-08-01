@@ -14,7 +14,7 @@ function AddTimer() {
   };
 
   return (
-    <Form onSave={handleSave} ref={customForm}>
+    <Form onSave={handleSave} ref={customForm} id='add-timer'>
       <Input id='name' label='Your name' type='text' />
       <Input id='age' label='Your age' type='number' />
 
